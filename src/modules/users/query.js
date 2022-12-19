@@ -3,7 +3,7 @@ const GET_USER = `
     user_id userId,
     fullname speaker,
     user_profession profession,
-    user_type type,
+    user_type turi,
     user_company company
     from users
 `
