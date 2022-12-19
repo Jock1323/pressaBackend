@@ -7,10 +7,10 @@ const get = async () => {
     return error
   }
 }
-const post = async ({ title, description, text, date, status, youtube, subcategory_id, user_id }, { filename }) => {
+const post = async ({ title, description, text, date, turi, youtube, subcategory_id, user_id }, { filename }) => {
   let x=new Date().toLocaleTimeString()
   try {
-    return await fetchAll(POST_CARDS, [title, description, text, date, x, status, youtube, filename, subcategory_id, user_id,])
+    return await fetchAll(POST_CARDS, [title, description, text, date, x, turi, youtube, filename, subcategory_id, user_id,])
   } catch (error) {
     return error
   }

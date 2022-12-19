@@ -13,7 +13,7 @@ const getUser = async (req, res, next) => {
     }
     else {
       res.status(404).json({
-        totalCount: cards.length,
+        totalCount: users.length,
         message: "users not found",
         data: []
       })

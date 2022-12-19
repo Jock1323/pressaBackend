@@ -1,11 +1,5 @@
 const GET_USER = `
-    select
-    user_id userId,
-    fullname speaker,
-    user_profession profession,
-    user_type turi,
-    user_company company
-    from users
+select * from users;
 `
 const POST_USER = `
     insert into users(fullname,user_profession,user_type) values($1,$2,$3) returning*

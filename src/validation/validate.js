@@ -51,7 +51,7 @@ export const checkCards = (method) => {
       text:Joi.string().required(),
       date:Joi.date().required(),
       time:Joi.date().timestamp().required(),
-      status:Joi.string().required().max(12),
+      turi:Joi.string().required().max(12),
       youtube: Joi.string(),
       subcategory_id:Joi.number().integer().required(),
       user_id:Joi.number().integer().required()
@@ -64,7 +64,7 @@ export const checkCards = (method) => {
       text:Joi.string(),
       date:Joi.date(),
       time:Joi.date().timestamp(),
-      status:Joi.string().max(12),
+      turi:Joi.string().max(12),
       youtube:Joi.string(),
       subcategory_id:Joi.number().integer(),
       user_id:Joi.number().integer()

@@ -1,10 +1,11 @@
 import { customError } from "../../exceptions/customErrorClass.js"
 import { deleted, get, post, put } from "./model.js"
 import path from "path"
+const host="http://localhost:8080/"
 const getImage = (req,res,next) => {
   try {
-    const {filename}=req.file
-    res.sendFile(path.join('uploads',filename))
+    const { image } = req.params
+    res.sendFile(path.join(process.cwd(),'uploads',image))
   } catch (error) {
     next(new customError(400,error.message))
   }
@@ -12,7 +13,7 @@ const getImage = (req,res,next) => {
 const getCards = async (req, res, next) => {
   try {
     let cards = await get()
-    console.log(cards);
+    cards.map(item=>item.image=`${host}${item.image}`)
     if (cards) {
       res.status(200).json({
         totalCount: cards.length,
@@ -68,6 +69,7 @@ const deleteCards = async (req, res, next) => {
 }
 export {
   getCards,
+  getImage,
   postCards,
   deleteCards,
   updateCards

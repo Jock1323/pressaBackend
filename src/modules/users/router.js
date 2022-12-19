@@ -3,7 +3,7 @@ import {checkUserMiddleware,checkUserCompanyMiddleware } from "../../middlewares
 import {getUser, postUser,postUserCompany } from "./controller.js";
 
 const route = Router()
-route.get("/users", getUser)
+route.get("/users/get", getUser)
 route.post("/users/post", checkUserMiddleware, postUser)
 route.post("/users/post/company", checkUserCompanyMiddleware, postUserCompany)
 
